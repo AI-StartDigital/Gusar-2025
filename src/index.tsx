@@ -530,7 +530,7 @@ app.get('/', (c) => {
                         <a href="https://www.facebook.com/www.tkdgusar.hr" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-all hover:scale-110">
                             <i class="fab fa-facebook-f text-xl"></i>
                         </a>
-                        <a href="#" class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white p-3 rounded-full transition-all hover:scale-110">
+                        <a href="https://www.instagram.com/tkd_gusar/" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white p-3 rounded-full transition-all hover:scale-110">
                             <i class="fab fa-instagram text-xl"></i>
                         </a>
                     </div>
@@ -626,7 +626,7 @@ app.get('/', (c) => {
                                         <a href="https://www.facebook.com/www.tkdgusar.hr" target="_blank" class="bg-blue-600 hover:bg-blue-700 p-4 rounded-xl text-2xl transition-all hover:scale-110 hover:-translate-y-1">
                                             <i class="fab fa-facebook-f"></i>
                                         </a>
-                                        <a href="#" class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 p-4 rounded-xl text-2xl transition-all hover:scale-110 hover:-translate-y-1">
+                                        <a href="https://www.instagram.com/tkd_gusar/" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 p-4 rounded-xl text-2xl transition-all hover:scale-110 hover:-translate-y-1">
                                             <i class="fab fa-instagram"></i>
                                         </a>
                                     </div>
