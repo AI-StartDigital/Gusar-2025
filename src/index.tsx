@@ -421,44 +421,55 @@ app.get('/', (c) => {
                                     <td class="p-6">
                                         <div class="flex items-center">
                                             <div class="w-4 h-4 bg-gusar-red rounded-full mr-3"></div>
-                                            <span class="font-bold text-gusar-red">Vrtićanci (4-6 god)</span>
+                                            <span class="font-bold text-gusar-red">Vrtićanci 1 (3-4 godine)</span>
                                         </div>
                                     </td>
                                     <td class="p-6 text-gray-700">Utorak, Četvrtak</td>
-                                    <td class="p-6 font-semibold text-gray-800">18:00 - 19:00</td>
+                                    <td class="p-6 font-semibold text-gray-800">18:00 - 18:45</td>
                                     <td class="p-6 text-gray-700">Četvrt Ribnjak, Omiš</td>
                                 </tr>
                                 <tr class="hover:bg-blue-50 transition-colors">
                                     <td class="p-6">
                                         <div class="flex items-center">
                                             <div class="w-4 h-4 bg-gusar-blue rounded-full mr-3"></div>
-                                            <span class="font-bold text-gusar-blue">Mlađi Kadeti (7-11 god)</span>
+                                            <span class="font-bold text-gusar-blue">Vrtićanci 2 (5-6 godina)</span>
                                         </div>
                                     </td>
-                                    <td class="p-6 text-gray-700">Ponedjeljak, Srijeda, Petak</td>
-                                    <td class="p-6 font-semibold text-gray-800">19:00 - 20:00</td>
+                                    <td class="p-6 text-gray-700">Utorak, Četvrtak</td>
+                                    <td class="p-6 font-semibold text-gray-800">19:00 - 19:45</td>
                                     <td class="p-6 text-gray-700">Četvrt Ribnjak, Omiš</td>
                                 </tr>
                                 <tr class="hover:bg-red-50 transition-colors">
                                     <td class="p-6">
                                         <div class="flex items-center">
                                             <div class="w-4 h-4 bg-gusar-red rounded-full mr-3"></div>
-                                            <span class="font-bold text-gusar-red">Stariji Kadeti i Juniori</span>
+                                            <span class="font-bold text-gusar-red">Školarci 1 (1. i 2. razred)</span>
                                         </div>
                                     </td>
                                     <td class="p-6 text-gray-700">Ponedjeljak, Srijeda, Petak</td>
-                                    <td class="p-6 font-semibold text-gray-800">20:00 - 21:30</td>
+                                    <td class="p-6 font-semibold text-gray-800">18:30 - 19:30</td>
                                     <td class="p-6 text-gray-700">Četvrt Ribnjak, Omiš</td>
                                 </tr>
                                 <tr class="hover:bg-blue-50 transition-colors">
                                     <td class="p-6">
                                         <div class="flex items-center">
                                             <div class="w-4 h-4 bg-gusar-blue rounded-full mr-3"></div>
-                                            <span class="font-bold text-gusar-blue">Seniori i Rekreativci</span>
+                                            <span class="font-bold text-gusar-blue">Školarci 2 (3. 4. 5. razred)</span>
                                         </div>
                                     </td>
-                                    <td class="p-6 text-gray-700">Utorak, Četvrtak</td>
-                                    <td class="p-6 font-semibold text-gray-800">20:30 - 22:00</td>
+                                    <td class="p-6 text-gray-700">Ponedjeljak, Srijeda, Petak</td>
+                                    <td class="p-6 font-semibold text-gray-800">19:45 - 20:45</td>
+                                    <td class="p-6 text-gray-700">Četvrt Ribnjak, Omiš</td>
+                                </tr>
+                                <tr class="hover:bg-red-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="flex items-center">
+                                            <div class="w-4 h-4 bg-gusar-red rounded-full mr-3"></div>
+                                            <span class="font-bold text-gusar-red">Natjecatelji</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-6 text-gray-700">Pon, Sri, Pet: 20:45-22:00<br>Uto, Čet: 20:00-21:15</td>
+                                    <td class="p-6 font-semibold text-gray-800">20:00 - 22:00</td>
                                     <td class="p-6 text-gray-700">Četvrt Ribnjak, Omiš</td>
                                 </tr>
                             </tbody>
@@ -474,6 +485,7 @@ app.get('/', (c) => {
                 </div>
             </div>
         </section>
+
 
         <!-- Galerija Section -->
         <section id="galerija" class="py-24 md:py-32 bg-gray-50">
