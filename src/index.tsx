@@ -677,6 +677,12 @@ app.get('/', (c) => {
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!-- EmailJS -->
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+                <script>
+                        // Initialize EmailJS
+                                emailjs.init("54u_ETpW8wykHxVAE");
+                                    </script>
     <script>
         // Initialize AOS
         AOS.init({
@@ -717,8 +723,7 @@ app.get('/', (c) => {
                 }
             });
         });
-
-        // Navbar background change on scroll
+5000);        // Navbar background change on scroll
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
@@ -730,8 +735,63 @@ app.get('/', (c) => {
             }
         });
 
-        // Enhanced form handling with success message
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
+// Enhanced form handling with EmailJS
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(this);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+    
+    // Simple validation
+    if (!name || !email || !message) {
+        alert('Molimo unesite sva polja.');
+        return;
+    }
+    
+    // Show loading state
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Šalje se...';
+    submitBtn.disabled = true;
+    
+    // Prepare template parameters
+    const templateParams = {
+        from_name: name,
+        from_email: email,
+        message: message,
+        to_email: 'jvrdoljak41@gmail.com'
+    };
+    
+    // Send email via EmailJS
+    emailjs.send('service_ghjnc8g', 'vlfnbso', templateParams, 'pWcgIBfDnpbP1Hk0JOfnV')
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            
+            // Show success message
+            const successDiv = document.getElementById('form-success');
+            successDiv.style.display = 'block';
+            
+            // Reset form
+            document.getElementById('contact-form').reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successDiv.style.display = 'none';
+            }, 5000);
+            
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert('Dogodila se greška prilikom slanja poruke. Molimo pokušajte ponovo ili nas kontaktirajte direktno na jvrdoljak41@gmail.com');
+        })
+        .finally(function() {
+            // Restore button state
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
+});        document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form data
