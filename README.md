@@ -1,4 +1,4 @@
-Web Stranica za Taekwondo Klub Gusar, Omiš
+Web Stranica za Taekwondo Klub Gusar, Omiš, Hrvatska
 
 Ovo je službena web stranica za Taekwondo Klub Gusar iz Omiša. Projekt je izrađen kao ultra-lagana i brza statična web stranica.
 
