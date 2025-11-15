@@ -1,18 +1,3 @@
-import { Hono } from 'hono'
-import { serveStatic } from 'hono/cloudflare-workers'
-import { renderer } from './renderer'
-
-const app = new Hono()
-
-app.use(renderer)
-
-// Serve static files
-app.use('/static/*', serveStatic({ root: './public' }))
-app.use('/favicon.ico', serveStatic({ root: './public' }))
-
-// Main page
-app.get('/', (c) => {
-  return c.html(`
 <!DOCTYPE html>
 <html lang="hr">
 <head>
@@ -652,7 +637,7 @@ app.get('/', (c) => {
                                     Naša Lokacija
                                 </h4>
                                 <div class="rounded-2xl overflow-hidden shadow-lg">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2900.50508197775!2d16.68748367676641!3d43.44916896229986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134a834241103c8b%3A0x6283592e3f53833d!2s%C4%8Cetvrt%20Ribnjak%2C%2021310%2C%20Omi%C5%A1%2C%20Croatia!5e0!3m2!1sen!2sus!4v1723945831341!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!m12!1m3!1d2900.50508197775!2d16.68748367676641!3d43.44916896229986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134a834241103c8b%3A0x6283592e3f53833d!2s%C4%8Cetvrt%20Ribnjak%2C%2021310%2C%20Omi%C5%A1%2C%20Croatia!5e0!3m2!1sen!2sus!4v1723945831341!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -723,7 +708,8 @@ app.get('/', (c) => {
                 }
             });
         });
-5000);        // Navbar background change on scroll
+        
+        // Navbar background change on scroll
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
@@ -791,41 +777,8 @@ app.get('/', (c) => {
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
         });
-});        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            
-            // Simple validation
-            if (!name || !email || !message) {
-                alert('Molimo unesite sva polja.');
-                return;
-            }
-            
-            // Simulate sending to jvrdoljak41@gmail.com
-            // In production, this would be handled by a backend service
-            
-            // Show success message
-            const successDiv = document.getElementById('form-success');
-            successDiv.style.display = 'block';
-            
-            // Reset form
-            this.reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successDiv.style.display = 'none';
-            }, 5000);
-        });
+});
     </script>
 
 </body>
 </html>
-  `)
-})
-
-export default app
