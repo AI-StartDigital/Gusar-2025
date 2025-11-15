@@ -1,3 +1,18 @@
+import { Hono } from 'hono'
+import { serveStatic } from 'hono/cloudflare-workers'
+import { renderer } from './renderer'
+
+const app = new Hono()
+
+app.use(renderer)
+
+// Serve static files
+app.use('/static/*', serveStatic({ root: './public' }))
+app.use('/favicon.ico', serveStatic({ root: './public' }))
+
+// Main page
+app.get('/', (c) => {
+  return c.html(`
 <!DOCTYPE html>
 <html lang="hr">
 <head>
@@ -782,3 +797,7 @@
 
 </body>
 </html>
+  `)
+})
+
+export default app
